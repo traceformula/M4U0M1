@@ -1,0 +1,30 @@
+package lesson5.lecture.factorymethods2.rulesets;
+
+import java.awt.Component;
+import java.util.HashMap;
+
+import lesson5.lecture.factorymethods2.RuleSet;
+import lesson5.lecture.factorymethods2.windows.AddressWindow;
+import lesson5.lecture.factorymethods2.windows.CustomerProfileWindow;
+
+final public class RuleSetFactory {
+	private RuleSetFactory(){}
+	
+	// Need explanation 
+	static HashMap<Class<? extends Component>, RuleSet> map = new HashMap<>();
+	static {
+		
+		// need explanation
+		map.put(AddressWindow.class, new AddressRuleSet());
+		map.put(CustomerProfileWindow.class, new CustomerProfileRuleSet());
+	}
+	public static RuleSet getRuleSet(Component c) {
+		
+		// Need explanation 
+		Class<? extends Component> cl = c.getClass();
+		if(!map.containsKey(cl)) {
+			throw new IllegalArgumentException("No RuleSet found for this Component");
+		}
+		return map.get(cl);
+	}
+}

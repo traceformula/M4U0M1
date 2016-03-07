@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="308.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <TextField fx:id="t2" layoutX="215.0" layoutY="89.0" />
+      <TextField fx:id="t1" layoutX="18.0" layoutY="89.0" />
+      <Button layoutX="167.0" layoutY="209.0" mnemonicParsing="false" onAction="#Swap" text="Swap Text" />
+   </children>
+</AnchorPane>
